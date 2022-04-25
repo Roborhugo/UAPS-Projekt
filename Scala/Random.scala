@@ -2,8 +2,8 @@ import java.io.FileWriter
 import java.io.File
 @main
 def main(n: Int, randomOut: String, partialOut: String): Unit =
-  val random = randomVector(n)
-  val partial = partiallySorted(random)
+  val random: Vector[Int] = randomVector(n)
+  val partial: Vector[Int] = partiallySorted(random)
   writeFile(randomOut, random)
   writeFile(partialOut, partial)
   
