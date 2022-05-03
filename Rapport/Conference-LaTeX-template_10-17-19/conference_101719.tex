@@ -1,4 +1,4 @@
-\documentclass[conference]{IEEEtran}
+                               \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
@@ -51,6 +51,19 @@ component, formatting, style, styling, insert
 \section{Inledning}
 
 \section{Bakgrund}
+\subsection{Exekveringstid}
+Det är vanligt att göra mätningar på exekveringstid då man utvärderar programvarusystem eftersom det är ett objektivt mått som kan användas för jämförelser mellan olika lösningar och algoritmers effektivitet \cite{b1}. Man kan göra mätningar av exekveringstid över små delar av ett projekt -- exempelvis över en sorteringsalgoritm -- eller över hela system, då ofta med hjälp av så kallade testuppsättningar som mäter exekveringstiden för flera vanliga processer i systemet.
+
+\subsection{Exekveringssystem}
+Datorer kör på maskinkod som är instruktioner för ett system i sin nuvarande konfiguration. Alla system har därför olika maskinkod för samma program, och detta kan åstadkommas på olika sätt. 
+
+Visa språk -- exempelvis C -- använder en kompilator för att omvandla källkoden till maskinkod för systemet \cite{b1}. Detta kallas för “Ahead-Of-Time”-kompilering (AOT) och det skapar helt fristående maskinkod som kan exekveras av systemet.
+
+Man kan alternativt istället använda en interpretator som vid körtid läser källkoden och utför instruktionerna efter hand \cite{b1}. Fördelen med detta är att koden blir portabel eftersom den kan köra på alla system som kör interpretatorn, men man offrar mycket prestanda i tolkningen under körtid. 
+
+För att minska prestandaförlusten med interpreterad körning så använder vissa språk, såsom Java, sig av en kompilator som -- istället för att skapa maskinkod -- skapar bytekod \cite{b2}. Bytekod kan liknas till maskinkod, fast den gäller för den virtuella maskin som kör interpretatorn. Resultatet av kompileringen till bytekod blir snabbare exekvering med samma portabilitet, dock är det fortfarande långsammare än att köra ett AOT-kompilerat program \cite{b1}.
+
+För att ytterligare eliminera prestandaförlusten använder man sig av “Just-In-Time”-kompilering (JIT) \cite{b1}. JIT-kompilering fungerar precis som interpreterad körning, förutom att interpretatorn kan kompilera vissa delar av koden till maskinkod under körning. Det innebär att upprepad körning av en del av koden leder till att koden blir kompilerad till maskinkod och vissa optimeringar görs för att minska exekveringstiden. Detta behåller portabiliteten men ökar prestandan avsevärt, dock endast för upprepad körning. Upprepas kod bara ett fåtal gånger, eller inte alls, kommer prestandan vara densamma som för fullt interpreterad körning.
 
 \section{Forskningsfrågor}
 \begin{itemize}
@@ -280,13 +293,15 @@ For papers published in translation journals, please give the English
 citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{00}
-\bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-\bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-\bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+\bibitem{b1} M. Höst, EDAA35 Utvärdering av programvarusystem. Datavetenskap, LTH, Lunds universitet, 03/01-2022
+\bibitem{b2} B. Regnell, Introduktion till programmering med Scala. Datavetenskap, LTH, Lunds universitet, 17/12-2021
+\bibitem{b3} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+\bibitem{b4} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
+\bibitem{b5} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+\bibitem{b6} K. Elissa, ``Title of paper if known,'' unpublished.
+\bibitem{b7} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
+\bibitem{b8} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
+\bibitem{b9} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
 \end{thebibliography}
 \vspace{12pt}
 \color{red}
