@@ -35,7 +35,6 @@ int main(int argc, char** args)
 	for (size_t i = 0; i < dataSize; i++)
 	{
 		data[i] = lineValues.at(i);
-		std::cout << data[i] << std::endl;
 	}
 
 	for (size_t i = 0; i < iterations; i++)
@@ -46,7 +45,6 @@ int main(int argc, char** args)
 		auto end = std::chrono::high_resolution_clock::now();
 		std::chrono::nanoseconds time = std::chrono::duration_cast<std::chrono::nanoseconds>(end - start);
 		executionsTimes[i] = time.count();
-		std::cout << "Execution time: " << time.count() << std::endl;
 	}
 
 	{
