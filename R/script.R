@@ -12,4 +12,21 @@ parseFile <- function(path) {
 # Test
 #parseFile("../Scala/random.txt")
 
+# Compiling programs
+# Scala (List generator)
+setwd("../Scala")
+system("scalac Random.scala")
 
+# Java standard compilation
+setwd("../Java")
+system("javac MergeSort.java")
+
+# Java AOT-compilation
+system("jaotc --output MergeSort.so MergeSort.class")
+
+#C++
+setwd("../C++")
+system("g++ -o MergeSort MergeSort.cpp")
+
+# Reset directory
+setwd("../R")
