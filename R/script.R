@@ -105,11 +105,11 @@ getMeanList <- function(runCommand, start, stop, n) {
 # Mean lists for every program
 javaJIT <- getMeanList("java -classpath ../Java/ MergeSort ../Scala/random.txt result.txt 600", 450, 600, 10)
 
-javaXint <- getMeanList("java -classpath ../Java/ -Xint MergeSort ../Scala/random.txt ../Java/resultXint.txt 600", 1, 600, 10)
+javaXint <- getMeanList("java -classpath ../Java/ -Xint MergeSort ../Scala/random.txt result.txt 600", 1, 600, 10)
 
-javaAOT <- getMeanList("java -XX:+UnlockExperimentalVMOptions -XX:AOTLibrary=../Java/MergeSort.so -classpath ../Java MergeSort ../Scala/random.txt ../Java/result.txt 600", 1, 600, 10)
+javaAOT <- getMeanList("java -XX:+UnlockExperimentalVMOptions -XX:AOTLibrary=../Java/MergeSort.so -classpath ../Java MergeSort ../Scala/random.txt result.txt 600", 1, 600, 10)
 
-cpp <- getMeanList("../C++/MergeSort ../Scala/random.txt ../C++/result.txt 600", 1, 600, 10)
+cpp <- getMeanList("../C++/MergeSort ../Scala/random.txt result.txt 600", 1, 600, 10)
 
 
 # Print mean of mean list plus mean list
