@@ -138,4 +138,4 @@ print("JIT & AOT")
 t.test(javaJIT, javaAOT)
 
 print("JIT & C++")
-t.test(javaJit, cpp)
+t.test(javaJIT, cpp)
