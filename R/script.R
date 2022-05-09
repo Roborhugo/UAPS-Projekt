@@ -42,9 +42,9 @@ parseFile <- function(path) {
 
 
 # Plot dataframe
-plotData <- function(data, name) {
+plotData <- function(data, name, lim) {
 	pdf(name)
-	plot(data, type = 'l')
+	plot(data, type = 'l', ylim = c(0, lim))
 	dev.off()
 }
 
@@ -64,16 +64,16 @@ system("../C++/MergeSort ../Scala/random.txt ../C++/result.txt 600")
 
 # Plot every program
 # Interpreted Java
-plotData(parseFile("../Java/resultXint.txt"), "Java Xint.pdf")
+plotData(parseFile("../Java/resultXint.txt"), "Java Xint.pdf", 12000000)
 
 # JIT Java
-plotData(parseFile("../Java/result.txt"), "Java.pdf")
+plotData(parseFile("../Java/result.txt"), "Java.pdf", 4000000)
 
 # AOT Java
-plotData(parseFile("../Java/resultAOT.txt"), "Java AOT.pdf")
+plotData(parseFile("../Java/resultAOT.txt"), "Java AOT.pdf", 4000000)
 
 # C++
-plotData(parseFile("../C++/result.txt"), "C++.pdf")
+plotData(parseFile("../C++/result.txt"), "C++.pdf", 350000)
 
 
 # Get average time of one running, iterations from start to stop. (make sure result path is R/result.txt i.e. just result.txt)
