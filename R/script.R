@@ -23,7 +23,7 @@ setwd("../R")
 
 
 # Generate new random numbers
-system("scala ../Scala/Random.scala 1000 ../Scala/random.txt ../scala/partial.txt")
+system("scala ../Scala/Random.scala 1000 ../Scala/random.txt ../Scala/partial.txt")
 
 
 # Parse file into dataframe with time and iteration
