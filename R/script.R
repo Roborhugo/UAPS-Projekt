@@ -44,7 +44,7 @@ parseFile <- function(path) {
 # Plot dataframe
 plotData <- function(data, name, lim) {
 	pdf(name)
-	plot(data, type = 'l', ylim = c(0, lim))
+	plot(data, type = 'l', ylim = c(min(data$time), lim))
 	dev.off()
 }
 
