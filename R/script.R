@@ -53,10 +53,10 @@ plotData <- function(data, name, lim) {
 system("java -classpath ../Java/ -Xint MergeSort ../Scala/random.txt ../Java/resultXint.txt 600")
 
 # JIT Java
-system("java -classpath ../Java/ MergeSort ../Scala/random.txt result.txt 1200")
+system("java -classpath ../Java/ MergeSort ../Scala/random.txt ../Java/result.txt 1200")
 
 # AOT Java
-system("java -XX:+UnlockExperimentalVMOptions -XX:AOTLibrary=../Java/MergeSort.so -classpath ../Java MergeSort ../Scala/random.txt ../Java/result.txt 600")
+system("java -XX:+UnlockExperimentalVMOptions -XX:AOTLibrary=../Java/MergeSort.so -classpath ../Java MergeSort ../Scala/random.txt ../Java/resultAOT.txt 600")
 
 # C++
 system("../C++/MergeSort ../Scala/random.txt ../C++/result.txt 600")
